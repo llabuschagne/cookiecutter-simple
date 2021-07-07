@@ -26,15 +26,6 @@ try:
     branch.rename("main")
     local_repo.git.push("--set-upstream", origin, 'main')
 except BadCredentialsException:
-    print('asdf')
+    print("Can't create GitHub repo because cookiecutter.github_auth_token isn't correct. If you see this message when running a `cruft` command other than `create`, don't worry, it's normal.")
 except Exception as e:
-    
-    print(dir(e))
-    print(type(e.__class__))
-    print(e.__class__)
-    print(e.data)
-    print(e.headers)
-    print(e.status)
-    if e.__class__ is BadCredentialsException:
-        print("Can't create GitHub repo because cookiecutter.github_auth_token isn't correct. If you see this message when running a `cruft` command other than `create`, don't worry, it's normal.")
-    # print(f"Can't create GitHub repo because {e.__class__} occurred.")
+    print(f"Can't create GitHub repo because {e.__class__} occurred.")
