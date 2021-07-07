@@ -2,5 +2,8 @@
     "directory_name": "Hello",
     "file_name": "Howdy",
     "file_name_1": "Howdier",
-    "greeting_recipient": "Anna Sun"
+    "greeting_recipient": "Anna Sun",
+    "remote_repo_name": "cookiecutter-created-repo",
+    "github_organization": "Alphawave-ML",
+    "github_auth_token": "INSERT YOUR AUTH TOKEN"
 }
