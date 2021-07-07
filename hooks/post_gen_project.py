@@ -1,6 +1,7 @@
 from github import Github, GithubException
 import git
 
+
 try:
     g = Github('{{cookiecutter.github_auth_token}}')
 
