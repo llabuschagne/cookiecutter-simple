@@ -24,5 +24,7 @@ try:
     branch = local_repo.active_branch
     branch.rename("main")
     local_repo.git.push("--set-upstream", origin, 'main')
-except:
-    print('Repo Creation Failed')
+except Exception as e:
+    print(e.__class__, "occurred.")
+    print(e)
+    print(dir(e))
