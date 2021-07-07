@@ -1,7 +1,12 @@
 from github import Github
+import git
 
 g = Github('{{cookiecutter.github_auth_token}}')
+
+local_repo = git.Repo.init()
+
 organization = g.get_organization('{{cookiecutter.github_organization}}')
+
 repo = organization.create_repo(
     '{{cookiecutter.remote_repo_name}}',
     allow_rebase_merge=True,
@@ -12,8 +17,9 @@ repo = organization.create_repo(
     has_wiki=False,
     private=True,
 )
-
-repo.git.add(all=True)
-repo.index.commit("Intial Commit By Cookiecutter")
-origin = repo.remote(name='origin')
-origin.push()
+origin = local_repo.create_remote('origin', repo.ssh_url)
+local_repo.index.add(local_repo.untracked_files)
+local_repo.index.commit("Intial Commit By Cookiecutter")
+branch = local_repo.active_branch
+branch.rename("main")
+local_repo.git.push("--set-upstream", origin, 'main')
