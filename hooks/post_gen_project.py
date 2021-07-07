@@ -25,6 +25,6 @@ try:
     branch.rename("main")
     local_repo.git.push("--set-upstream", origin, 'main')
 except GithubException.BadCredentialsException:
-    print("Can't create GitHub repo {{github_organization}}/{{github_organization}} because github_auth_token isn't correct. If you see this message when running a `cruft` command other than `create`, don't worry, it's normal.")
+    print("Can't create GitHub repo {{cookiecutter.github_organization}}/{{cookiecutter.github_organization}} because cookiecutter.github_auth_token isn't correct. If you see this message when running a `cruft` command other than `create`, don't worry, it's normal.")
 except Exception as e:
-    print("Can't create GitHub repo {{github_organization}}/{{github_organization}} because {e.__class__} occurred.")
+    print("Can't create GitHub repo {{cookiecutter.github_organization}}/{{cookiecutter.github_organization}} because {e.__class__} occurred.")
