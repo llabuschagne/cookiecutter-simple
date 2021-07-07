@@ -28,6 +28,7 @@ try:
 except BadCredentialsException:
     print('asdf')
 except Exception as e:
+    
     print(dir(e))
     print(type(e.__class__))
     print(e.__class__)
