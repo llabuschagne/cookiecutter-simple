@@ -12,3 +12,8 @@ repo = organization.create_repo(
     has_wiki=False,
     private=True,
 )
+
+repo.git.add(all=True)
+repo.index.commit("Intial Commit By Cookiecutter")
+origin = repo.remote(name='origin')
+origin.push()
