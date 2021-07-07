@@ -7,6 +7,7 @@ try:
 
     local_repo = git.Repo.init()
 
+
     organization = g.get_organization('{{cookiecutter.github_organization}}')
 
     repo = organization.create_repo(
