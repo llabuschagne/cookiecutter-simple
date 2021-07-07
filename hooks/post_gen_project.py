@@ -31,4 +31,4 @@ except Exception as e:
     print(e.__class__)
     if e.__class__ is GithubException.BadCredentialsException:
         print("Can't create GitHub repo because cookiecutter.github_auth_token isn't correct. If you see this message when running a `cruft` command other than `create`, don't worry, it's normal.")
-    print(f"Can't create GitHub repo because {e.__class__} occurred.")
+    # print(f"Can't create GitHub repo because {e.__class__} occurred.")
